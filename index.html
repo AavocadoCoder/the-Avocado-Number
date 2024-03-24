@@ -1,0 +1,29 @@
+<p id="mytext">Guess a number between 1 and 20!</p>
+<input type='number' id="inp"></input>
+<button id="mybutton" onclick="onButtonClick()">Guess</button>
+<p id="result"></p>
+
+<script>
+function getRandom (low, high) {
+  const min = Math.ceil (low);
+  const max = Math. floor (high)
+  return Math. floor (Math. random() * (max - min + 1)) + min;
+}
+
+myNumber = getRandom(1, 20);
+
+function onButtonClick(){
+    var theirGuess = document.getElementById('inp').value
+    
+    if (myNumber == theirGuess){
+        document.getElementById('result').textContent = "You got it right :)";
+        console.log(theirGuess)
+    }
+    else if (myNumber < theirGuess){
+        document.getElementById('result').textContent = "I'm sorry, that number is to high :(";
+    }
+    else {
+        document.getElementById('result').textContent = "I'm sorry, that number is to low :(";
+    }
+}
+</script>
